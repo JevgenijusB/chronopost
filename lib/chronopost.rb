@@ -6,13 +6,19 @@ require 'chronopost/errors'
 
 require 'chronopost/status'
 require 'chronopost/client'
-require 'chronopost/service'
+
+require 'chronopost/services'
+require 'chronopost/services/base_service'
+require 'chronopost/services/drop_off_points_service'
+require 'chronopost/services/shipping_service'
 require 'chronopost/service_registry'
+
 require 'chronopost/request'
 require 'chronopost/query'
 require 'chronopost/operation'
 
 require 'chronopost/drop_off_points/search'
+require 'chronopost/labels/create'
 
 module Chronopost
   module_function
@@ -38,7 +44,7 @@ module Chronopost
     @services = ServiceRegistry.new
 
     config.enabled_services.each do |service_name|
-      @services.register(Service.new(service_name))
+      @services.register(Services.build(service_name))
     end
   end
 

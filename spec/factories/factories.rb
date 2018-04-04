@@ -30,15 +30,14 @@ FactoryBot.define do
     initialize_with { new(code, message) }
   end
 
-  factory :service, class: Chronopost::Service do
-    name :test
+  factory :base_service, class: Chronopost::Services::BaseService do
+    name :shipping
 
     initialize_with { new(name) }
-
-    trait :drop_off_points do
-      name :drop_off_points
-    end
   end
+
+  factory :drop_off_points_service, class: Chronopost::Services::DropOffPointsService
+  factory :shipping_service, class: Chronopost::Services::ShippingService
 
   factory :service_registry, class: Chronopost::ServiceRegistry
 end

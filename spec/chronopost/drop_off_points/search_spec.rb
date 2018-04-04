@@ -22,7 +22,7 @@ RSpec.describe Chronopost::DropOffPoints::Search, '.for' do
   before do
     expect(Chronopost::Query)
       .to(receive(:run))
-      .with(Chronopost::Service, described_class::OPERATION, Hash)
+      .with(Chronopost::Services::DropOffPointsService, described_class::OPERATION, Hash)
       .and_return(query_result)
   end
 
