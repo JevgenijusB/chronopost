@@ -13,14 +13,20 @@ module Chronopost
         @client ||= Client.new(wsdl_url)
       end
 
-      def inject_credentials(params)
-        Chronopost.config.credentials.merge(params)
+      def wsdl_url
+        raise NotImplementedError
+      end
+
+      def inject_credentials(params, default_params)
+        default_params
+          .deep_merge(credentials)
+          .deep_merge(params)
       end
 
       private
 
-      def wsdl_url
-        raise NotImplementedError
+      def credentials
+        Chronopost.config.credentials
       end
     end
   end

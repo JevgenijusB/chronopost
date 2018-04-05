@@ -12,6 +12,17 @@ module Chronopost
       def wsdl_url
         WSDL_URL
       end
+
+      private
+
+      def credentials
+        {
+          headerValue: {
+            accountNumber: Chronopost.config.account_number,
+          },
+          password: Chronopost.config.account_password,
+        }
+      end
     end
   end
 end

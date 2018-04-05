@@ -6,14 +6,9 @@ RSpec.xdescribe Chronopost::DropOffPoints::Search, '.for' do
       {
         coordGeoLatitude: '49.698421',
         coordGeoLongitude: '4.972183',
-        type: 'P',
-        productCode: '86',
         service: 'L',
         weight: '1',
         shippingDate: '15/07/2017',
-        maxPointChronopost: '2',
-        maxDistanceSearch: '10',
-        holidayTolerant: '1',
       }
     end
 

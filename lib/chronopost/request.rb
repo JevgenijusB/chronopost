@@ -9,10 +9,6 @@ module Chronopost
       @params = params.reject { |_, val| val.to_s.size.zero? }
     end
 
-    def message
-      api_credentials.merge(params)
-    end
-
     private
 
     def api_credentials

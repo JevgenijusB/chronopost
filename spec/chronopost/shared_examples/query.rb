@@ -13,12 +13,4 @@ RSpec.shared_examples :query do
       expect(subject).to include(*response_keys)
     end
   end
-
-  context 'when params are invalid' do
-    let(:params) { {} }
-
-    it 'raises an error' do
-      expect { subject }.to raise_error(Chronopost::ResponseError)
-    end
-  end
 end

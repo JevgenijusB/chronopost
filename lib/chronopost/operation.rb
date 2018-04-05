@@ -19,8 +19,16 @@ module Chronopost
       raise NotImplementedError
     end
 
+    def default_params
+      raise NotImplementedError
+    end
+
     def service
       Chronopost.services.resolve(service_name)
+    end
+
+    def params_with_credentials
+      service.inject_credentials(params, default_params)
     end
   end
 end

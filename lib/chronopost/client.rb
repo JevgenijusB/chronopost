@@ -29,7 +29,7 @@ module Chronopost
 
     def call(request)
       with_retry do
-        soap_client.call(request.operation, message: request.message)
+        soap_client.call(request.operation, message: request.params)
       end
     end
 
