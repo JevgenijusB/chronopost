@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/zverseckas/chronopost.svg?branch=master)](https://travis-ci.org/zverseckas/chronopost)
+[![Coverage Status](https://coveralls.io/repos/github/zverseckas/chronopost/badge.svg?branch=master)](https://coveralls.io/github/zverseckas/chronopost?branch=master)
+
 # Chronopost API client
 
 ### Documentation
