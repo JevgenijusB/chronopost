@@ -7,6 +7,9 @@ require 'support/factory_bot'
 require 'webmock/rspec'
 require 'chronopost/shared_examples/query'
 require 'chronopost/shared_examples/service'
+require 'coveralls'
+
+Coveralls.wear!
 
 RSpec.configure do |config|
   config.before do
