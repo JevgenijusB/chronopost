@@ -5,6 +5,7 @@ module Chronopost
     DEFAULT_SERVICES = %i(
       drop_off_points
       shipping
+      tracking
     ).freeze
 
     attr_accessor :account_number, :account_password,

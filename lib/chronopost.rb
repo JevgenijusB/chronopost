@@ -11,6 +11,7 @@ require 'chronopost/services'
 require 'chronopost/services/base_service'
 require 'chronopost/services/drop_off_points_service'
 require 'chronopost/services/shipping_service'
+require 'chronopost/services/tracking_service'
 require 'chronopost/service_registry'
 
 require 'chronopost/request'
@@ -19,6 +20,7 @@ require 'chronopost/operation'
 
 require 'chronopost/drop_off_points/search'
 require 'chronopost/labels/create'
+require 'chronopost/labels/track'
 
 module Chronopost
   module_function
