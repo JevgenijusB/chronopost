@@ -5,10 +5,7 @@ RSpec.describe Chronopost::Labels::Create, '.for' do
 
   let(:params) { { test: '' } }
 
-  let(:query_result) do
-    { result_multi_parcel_value: label }
-  end
-
+  let(:query_result) { label }
   let(:label) { double(:label) }
 
   before do

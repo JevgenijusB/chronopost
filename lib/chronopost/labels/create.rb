@@ -3,7 +3,7 @@
 module Chronopost
   module Labels
     class Create < Operation
-      OPERATION = :shipping_multi_parcel
+      OPERATION = :shipping_with_reservation_and_esd_with_ref_client
 
       DEFAULT_PARAMS = {
         headerValue: {
@@ -116,8 +116,7 @@ module Chronopost
 
       # @!visibility private
       def run
-        response = Chronopost::Query.run(service, OPERATION, params_with_credentials)
-        response[:result_multi_parcel_value]
+        Chronopost::Query.run(service, OPERATION, params_with_credentials)
       end
 
       private

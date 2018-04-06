@@ -60,7 +60,8 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
       %i(
         code_depot
         code_service
-        pdf_etiquette
+        reservation_number
+        skybill_number
       )
     end
   end
