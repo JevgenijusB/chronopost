@@ -14,6 +14,7 @@ module Chronopost
       @params = params
     end
 
+    # @!visibility private
     def execute!
       result = response_body
 
