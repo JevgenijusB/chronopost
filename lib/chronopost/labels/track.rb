@@ -12,7 +12,7 @@ module Chronopost
 
       # @!visibility private
       def run
-        response = Chronopost::Query.run(service, OPERATION, params_with_credentials)
+        response = Chronopost::Query.run(service, OPERATION, params)
         response[:list_event_info_comp]
       end
 

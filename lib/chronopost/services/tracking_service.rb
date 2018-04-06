@@ -12,12 +12,6 @@ module Chronopost
       def wsdl_url
         WSDL_URL
       end
-
-      private
-
-      def credentials
-        {}
-      end
     end
   end
 end
