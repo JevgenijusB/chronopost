@@ -11,12 +11,9 @@ module Chronopost
         coordGeoLatitude: '',
         coordGeoLongitude: '',
         type: 'P',
-        productCode: 86,
-        service: '',
-        weight: '',
         shippingDate: '',
-        maxPointChronopost: 30,
-        maxDistanceSearch: 10,
+        maxPointChronopost: 25,
+        maxDistanceSearch: 40,
         holidayTolerant: 1,
       }.freeze
 

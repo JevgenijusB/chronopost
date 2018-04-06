@@ -8,8 +8,7 @@ module Chronopost
       DEFAULT_PARAMS = {
         headerValue: {
           accountNumber: '',
-          idEmit: '',
-          identWebPro: '',
+          idEmit: 'CHRFR',
           subAccount: 0,
         },
         shipperValue: {

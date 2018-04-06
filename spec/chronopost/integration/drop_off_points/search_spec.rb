@@ -6,8 +6,6 @@ RSpec.xdescribe Chronopost::DropOffPoints::Search, '.for' do
       {
         coordGeoLatitude: '49.698421',
         coordGeoLongitude: '4.972183',
-        service: 'L',
-        weight: '1',
         shippingDate: '15/07/2017',
       }
     end
