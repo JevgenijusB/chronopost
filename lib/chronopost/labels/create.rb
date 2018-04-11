@@ -3,7 +3,7 @@
 module Chronopost
   module Labels
     class Create < Operation
-      OPERATION = :shipping_with_reservation_and_esd_with_ref_client
+      OPERATION = :shipping_multi_parcel
 
       DEFAULT_PARAMS = {
         headerValue: {
@@ -104,7 +104,7 @@ module Chronopost
         skybillParamsValue: {
           duplicata: 'N',
           mode: 'SPD',
-          withReservation: 0,
+          withReservation: 1,
         },
         password: '',
         modeRetour: 2,

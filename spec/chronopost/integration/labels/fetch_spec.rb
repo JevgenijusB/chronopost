@@ -4,12 +4,12 @@ RSpec.xdescribe Chronopost::Labels::Fetch, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        reservationNumber: '88896353780857082',
+        reservationNumber: '88895913588767082',
       }
     end
 
     let(:response_keys) do
-      %i()
+      %i(skybill)
     end
   end
 end

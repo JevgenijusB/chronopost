@@ -58,10 +58,8 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
 
     let(:response_keys) do
       %i(
-        code_depot
-        code_service
         reservation_number
-        skybill_number
+        result_multi_parcel_value
       )
     end
   end
