@@ -3,17 +3,12 @@
 module Chronopost
   module DropOffPoints
     class Search < Operation
-      OPERATION = :recherche_point_chronopost_par_coordonnees_geographiques
+      configure operation: :recherche_point_chronopost_par_coordonnees_geographiques,
+                service: :drop_off_points
 
       def run
-        response = Chronopost::Query.run(service, OPERATION, params_with_credentials)
-        response[:liste_point_relais]
-      end
-
-      private
-
-      def service_name
-        :drop_off_points
+        Chronopost::Query.run(service, operation, params_with_credentials)
+        # response[:liste_point_relais]
       end
     end
   end

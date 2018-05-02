@@ -5,9 +5,10 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'chronopost'
 require 'support/factory_bot'
 require 'webmock/rspec'
+
 require 'chronopost/shared_examples/query'
 require 'chronopost/shared_examples/service'
-
+require 'chronopost/shared_examples/operation'
 
 RSpec.configure do |config|
   config.before do

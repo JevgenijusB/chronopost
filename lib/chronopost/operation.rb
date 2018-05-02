@@ -8,17 +8,29 @@ module Chronopost
     include Interactor::Initializer
     include Chronopost::HasDefaults
 
+    class << self
+      attr_reader :operation, :service
+
+      def configure(operation:, service:)
+        @operation = operation
+        @service = service
+      end
+    end
+
     initialize_with :params
 
-    # @!visibility private
     def run
       raise NotImplementedError
     end
 
     private
 
+    def operation
+      self.class.operation
+    end
+
     def service_name
-      raise NotImplementedError
+      self.class.service
     end
 
     def service
