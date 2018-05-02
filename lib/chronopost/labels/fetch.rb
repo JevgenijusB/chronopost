@@ -3,16 +3,11 @@
 module Chronopost
   module Labels
     class Fetch < Operation
-      OPERATION = :get_reserved_skybill
+      configure operation: :get_reserved_skybill,
+                service: :shipping
 
       def run
-        Chronopost::Query.run(service, OPERATION, params)
-      end
-
-      private
-
-      def service_name
-        :shipping
+        Chronopost::Query.run(service, operation, params)
       end
     end
   end

@@ -3,16 +3,11 @@
 module Chronopost
   module Labels
     class Create < Operation
-      OPERATION = :shipping_multi_parcel
+      configure operation: :shipping_multi_parcel,
+                service: :shipping
 
       def run
-        Chronopost::Query.run(service, OPERATION, params_with_credentials)
-      end
-
-      private
-
-      def service_name
-        :shipping
+        Chronopost::Query.run(service, operation, params_with_credentials)
       end
     end
   end
