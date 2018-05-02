@@ -41,7 +41,9 @@ module Chronopost
     end
 
     def response
-      Chronopost::Query.run(service, operation, params_with_credentials)
+      @response ||= Chronopost::Query.run(
+        service, operation, params_with_credentials
+      )
     end
 
     def operation
