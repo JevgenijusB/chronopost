@@ -6,7 +6,18 @@ require 'chronopost/has_defaults'
 module Chronopost
   class Operation
     include Interactor::Initializer
+
     include Chronopost::HasDefaults
+    include Chronopost::Formattable
+
+    class << self
+      attr_reader :operation, :service
+
+      def configure(operation:, service:)
+        @operation = operation
+        @service = service
+      end
+    end
 
     class << self
       attr_reader :operation, :service
@@ -20,10 +31,20 @@ module Chronopost
     initialize_with :params
 
     def run
-      raise NotImplementedError
+      adjusted_response
     end
 
     private
+
+    def adjusted_response
+      format_response(response)
+    end
+
+    def response
+      @response ||= Chronopost::Query.run(
+        service, operation, params_with_credentials
+      )
+    end
 
     def operation
       self.class.operation
