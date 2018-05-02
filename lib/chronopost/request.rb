@@ -6,7 +6,7 @@ module Chronopost
 
     def initialize(operation, params = {})
       @operation = operation
-      @params = params.reject { |_, val| val.blank? }
+      @params = params
     end
   end
 end

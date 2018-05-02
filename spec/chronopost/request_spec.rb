@@ -6,20 +6,12 @@ RSpec.describe Chronopost::Request do
   end
 
   let(:operation) { :test }
-  let(:params) { { test: 'test', blank: '' } }
+  let(:params) { { test: 'test' } }
 
   describe '.new' do
     subject { described_class.new(operation, params) }
 
     it { is_expected.to be_an_instance_of described_class }
-  end
-
-  describe '#params' do
-    subject { request.params }
-
-    it 'includes all non-blank parameters' do
-      expect(subject).to eq(params.reject { |_, val| val.blank? })
-    end
   end
 
   describe '#operation' do
