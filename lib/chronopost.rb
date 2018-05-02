@@ -12,6 +12,8 @@ require 'chronopost/version'
 require 'chronopost/configuration'
 require 'chronopost/errors'
 
+require 'chronopost/has_defaults'
+
 require 'chronopost/status'
 require 'chronopost/client'
 
@@ -27,9 +29,16 @@ require 'chronopost/query'
 require 'chronopost/operation'
 
 require 'chronopost/drop_off_points/search'
+require 'chronopost/drop_off_points/search/defaults'
+
 require 'chronopost/labels/create'
+require 'chronopost/labels/create/defaults'
+
 require 'chronopost/labels/track'
+require 'chronopost/labels/track/defaults'
+
 require 'chronopost/labels/fetch'
+require 'chronopost/labels/fetch/defaults'
 
 module Chronopost
   module_function

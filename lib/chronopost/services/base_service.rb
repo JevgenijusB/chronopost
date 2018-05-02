@@ -17,10 +17,8 @@ module Chronopost
         raise NotImplementedError
       end
 
-      def inject_credentials(params, default_params)
-        default_params
-          .deep_merge(credentials)
-          .deep_merge(params)
+      def inject_credentials(params)
+        params.deep_merge(credentials)
       end
 
       private

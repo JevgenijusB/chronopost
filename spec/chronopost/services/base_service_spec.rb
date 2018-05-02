@@ -31,18 +31,17 @@ RSpec.describe Chronopost::Services::BaseService do
   end
 
   describe '#inject_credentials' do
-    subject { service.inject_credentials(params, default_params) }
+    subject { service.inject_credentials(params) }
 
-    let(:params) { { test: 'test' } }
     let(:credentials) { { inner: { accountNumber: 'n' }, accountPassword: 'p' } }
-    let(:default_params) { { inner: { accountNumber: '' }, accountPassword: '' } }
+    let(:params) { { inner: { accountNumber: 'test' }, accountPassword: '' } }
 
     before do
       expect(Chronopost.config).to receive(:credentials).and_return(credentials)
     end
 
     it 'injects credentials to params' do
-      expect(subject).to eq(default_params.deep_merge(credentials).deep_merge(params))
+      expect(subject).to eq(params.deep_merge(credentials))
     end
   end
 end
