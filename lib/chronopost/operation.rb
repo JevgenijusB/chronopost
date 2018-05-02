@@ -19,6 +19,15 @@ module Chronopost
       end
     end
 
+    class << self
+      attr_reader :operation, :service
+
+      def configure(operation:, service:)
+        @operation = operation
+        @service = service
+      end
+    end
+
     initialize_with :params
 
     def run

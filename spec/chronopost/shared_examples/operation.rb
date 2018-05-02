@@ -9,7 +9,8 @@ RSpec.shared_examples :operation do
   before do
     if defined?(described_class::FormatResponse)
       expect(described_class::FormatResponse)
-        .to receive(:for).and_return(response)
+        .to receive(:for)
+        .and_return(response)
     end
 
     expect(Chronopost::Query)
