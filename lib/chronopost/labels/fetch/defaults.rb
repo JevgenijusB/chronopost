@@ -5,7 +5,7 @@ module Chronopost
     class Fetch
       module Defaults
         PARAMS = {
-          reservationNumber: nil,
+          reservation_number: nil,
         }.freeze
       end
     end

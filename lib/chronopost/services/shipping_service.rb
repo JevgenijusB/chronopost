@@ -17,8 +17,8 @@ module Chronopost
 
       def credentials
         {
-          headerValue: {
-            accountNumber: Chronopost.config.account_number,
+          header_value: {
+            account_number: Chronopost.config.account_number,
           },
           password: Chronopost.config.account_password,
         }

@@ -3,41 +3,44 @@
 RSpec.xdescribe Chronopost::Labels::Create, '.for' do
   let(:shipper) do
     {
-      shipperName: 'Test Shipper',
-      shipperCivility: 'M',
-      shipperAdress1: 'Folie-Méricourt, 15B',
-      shipperZipCode: '75011',
-      shipperCity: 'PARIS',
-      shipperCountry: 'FR',
+      shipper_name: 'Test Shipper',
+      shipper_civility: 'E',
+      shipper_address: 'Folie-Méricourt, 15B',
+      shipper_postal_code: '75011',
+      shipper_city: 'PARIS',
+      shipper_country_code: 'FR',
+      shipper_phone: '0607080910',
     }
   end
 
   let(:customer) do
     {
-      customerName: 'Test Customer',
-      customerCivility: 'M',
-      customerAdress1: 'Folie-Méricourt 15B',
-      customerZipCode: '75011',
-      customerCity: 'PARIS',
-      customerCountry: 'FR',
+      customer_name: 'Vinted UAB',
+      customer_civility: 'E',
+      customer_address: 'Žirmūnų 70',
+      customer_postal_code: '09124',
+      customer_city: 'VILNIUS',
+      customer_country_code: 'LT',
     }
   end
 
   let(:recipient) do
     {
-      recipientName: 'Test Recipient',
-      recipientCivility: 'M',
-      recipientAdress1: 'Rue Pasteur, 211',
-      recipientZipCode: '33200',
-      recipientCity: 'BORDEAUX',
-      recipientCountry: 'FR',
+      recipient_name: 'Test Recipient',
+      recipient_civility: 'E',
+      recipient_address: 'Rue Pasteur, 211',
+      recipient_postal_code: '33200',
+      recipient_city: 'BORDEAUX',
+      recipient_country_code: 'FR',
+      recipient_phone: '0607080911',
+      recipient_email: 'test@tets.com',
     }
   end
 
   let(:parcel) do
     {
-      shipDate: '2018-04-03T12:29:36+02:00',
-      shipHour: '12',
+      shipping_date: '2018-04-03T12:29:36+02:00',
+      shipping_hour: '12',
       weight: '2.0',
       height: '0',
       length: '0',
@@ -48,11 +51,11 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        shipperValue: shipper,
-        customerValue: customer,
-        recipientValue: recipient,
-        refValue: { recipientRef: '0554S' },
-        skybillValue: parcel,
+        shipper: shipper,
+        customer: customer,
+        recipient: recipient,
+        reference: { recipient_reference: '0554S' },
+        skybill: parcel,
       }
     end
 

@@ -6,7 +6,7 @@ module Chronopost
       module Defaults
         PARAMS = {
           language: 'fr_FR',
-          skybillNumber: nil,
+          skybill_number: nil,
         }.freeze
       end
     end

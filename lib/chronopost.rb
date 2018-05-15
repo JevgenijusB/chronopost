@@ -14,6 +14,7 @@ require 'chronopost/errors'
 
 require 'chronopost/has_defaults'
 require 'chronopost/formattable'
+require 'chronopost/translatable'
 
 require 'chronopost/status'
 require 'chronopost/client'
@@ -31,17 +32,21 @@ require 'chronopost/operation'
 
 require 'chronopost/drop_off_points/search'
 require 'chronopost/drop_off_points/search/defaults'
+require 'chronopost/drop_off_points/search/translations'
 require 'chronopost/drop_off_points/search/format_response'
 
 require 'chronopost/labels/create'
 require 'chronopost/labels/create/defaults'
+require 'chronopost/labels/create/translations'
 
 require 'chronopost/labels/track'
 require 'chronopost/labels/track/defaults'
+require 'chronopost/labels/track/translations'
 require 'chronopost/labels/track/format_response'
 
 require 'chronopost/labels/fetch'
 require 'chronopost/labels/fetch/defaults'
+require 'chronopost/labels/fetch/translations'
 
 module Chronopost
   module_function

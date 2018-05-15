@@ -11,7 +11,7 @@ module Chronopost
         initialize_with :response
 
         def run
-          response[:list_event_info_comp]
+          response[:events_list]
         end
       end
     end

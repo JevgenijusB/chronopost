@@ -4,7 +4,7 @@ RSpec.xdescribe Chronopost::Labels::Fetch, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        reservationNumber: '88895913588767082',
+        reservation_number: '88895913588767082',
       }
     end
 

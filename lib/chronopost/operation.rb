@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'interactor/initializer'
-require 'chronopost/has_defaults'
+require 'chronopost/formattable'
+require 'chronopost/translatable'
 
 module Chronopost
   class Operation
@@ -9,6 +10,7 @@ module Chronopost
 
     include Chronopost::HasDefaults
     include Chronopost::Formattable
+    include Chronopost::Translatable
 
     class << self
       attr_reader :operation, :service
@@ -27,13 +29,20 @@ module Chronopost
 
     private
 
+    def adjusted_params
+      params_with_credentials = service.inject_credentials(params)
+      params_with_defaults = add_defaults_to_params(params_with_credentials)
+      translate_params(params_with_defaults)
+    end
+
     def adjusted_response
-      format_response(response)
+      translated_response = translate_response(response)
+      format_response(translated_response)
     end
 
     def response
       @response ||= Chronopost::Query.run(
-        service, operation, params_with_credentials
+        service, operation, adjusted_params
       )
     end
 
@@ -47,14 +56,6 @@ module Chronopost
 
     def service
       Chronopost.services.resolve(service_name)
-    end
-
-    def params_with_credentials
-      service.inject_credentials(params_with_defaults)
-    end
-
-    def params_with_defaults
-      add_defaults_to_params(params)
     end
   end
 end

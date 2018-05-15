@@ -27,7 +27,7 @@ module Chronopost
 
     def credentials
       {
-        accountNumber: account_number,
+        account_number: account_number,
         password: account_password,
       }
     end

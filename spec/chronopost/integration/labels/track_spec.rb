@@ -4,7 +4,7 @@ RSpec.xdescribe Chronopost::Labels::Track, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        skybillNumber: 'EE000927143CD',
+        skybill_number: 'EE000927143CD',
       }
     end
 

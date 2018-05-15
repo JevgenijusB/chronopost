@@ -4,18 +4,14 @@ RSpec.xdescribe Chronopost::DropOffPoints::Search, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        coordGeoLatitude: '49.698421',
-        coordGeoLongitude: '4.972183',
-        shippingDate: '15/07/2017',
+        latitude: '49.698421',
+        longitude: '4.972183',
+        shipping_date: '15/07/2017',
       }
     end
 
     let(:response_keys) do
-      %i(
-        coord_geolocalisation_latitude
-        coord_geolocalisation_longitude
-        distance_en_metre
-      )
+      %i(latitude longitude distance_in_meters)
     end
   end
 end

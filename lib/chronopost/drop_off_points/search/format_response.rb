@@ -11,7 +11,7 @@ module Chronopost
         initialize_with :response
 
         def run
-          response[:liste_point_relais]
+          response[:drop_off_point_list]
         end
       end
     end
