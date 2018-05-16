@@ -5,15 +5,16 @@ module Chronopost
     class Search
       module Defaults
         PARAMS = {
-          accountNumber: nil,
+          account_number: nil,
           password: nil,
-          coordGeoLatitude: nil,
-          coordGeoLongitude: nil,
-          type: 'P',
-          shippingDate: nil,
-          maxPointChronopost: 25,
-          maxDistanceSearch: 40,
-          holidayTolerant: 1,
+          latitude: nil,
+          longitude: nil,
+          point_type: 'P',
+          service: 'L',
+          shipping_date: nil,
+          number_of_results: 25,
+          search_radius: 40,
+          holiday_tolerant: 1,
         }.freeze
       end
     end
