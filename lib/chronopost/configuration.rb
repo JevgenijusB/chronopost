@@ -6,6 +6,7 @@ module Chronopost
       drop_off_points
       shipping
       tracking
+      quick_cost
     ).freeze
 
     attr_accessor :account_number, :account_password,

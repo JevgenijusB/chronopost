@@ -24,6 +24,7 @@ require 'chronopost/services/base_service'
 require 'chronopost/services/drop_off_points_service'
 require 'chronopost/services/shipping_service'
 require 'chronopost/services/tracking_service'
+require 'chronopost/services/quick_cost_service'
 require 'chronopost/service_registry'
 
 require 'chronopost/request'

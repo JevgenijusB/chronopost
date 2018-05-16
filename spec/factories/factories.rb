@@ -39,6 +39,7 @@ FactoryBot.define do
   factory :drop_off_points_service, class: Chronopost::Services::DropOffPointsService
   factory :shipping_service, class: Chronopost::Services::ShippingService
   factory :tracking_service, class: Chronopost::Services::TrackingService
+  factory :quick_cost_service, class: Chronopost::Services::QuickCostService
 
   factory :service_registry, class: Chronopost::ServiceRegistry
 end
