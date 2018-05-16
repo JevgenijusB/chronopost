@@ -49,6 +49,10 @@ require 'chronopost/labels/fetch'
 require 'chronopost/labels/fetch/defaults'
 require 'chronopost/labels/fetch/translations'
 
+require 'chronopost/labels/quick_cost'
+require 'chronopost/labels/quick_cost/defaults'
+require 'chronopost/labels/quick_cost/translations'
+
 module Chronopost
   module_function
 
