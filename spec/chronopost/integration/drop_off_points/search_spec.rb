@@ -12,7 +12,7 @@ RSpec.xdescribe Chronopost::DropOffPoints::Search, '.for' do
     end
 
     let(:response_keys) do
-      %i(latitude longitude distance_in_meters)
+      %i(latitude longitude distance)
     end
   end
 end

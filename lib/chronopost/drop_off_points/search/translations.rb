@@ -30,7 +30,7 @@ module Chronopost
           coord_geolocalisation_longitude: :longitude,
           url_google_maps: :google_maps_url,
           acces_personne_mobilite_reduite: :reduced_mobility_access,
-          distance_en_metre: :distance_in_meters,
+          distance_en_metre: :distance,
           liste_horaire_ouverture: :work_hours,
           jour: :weekday,
           horaires_as_string: :work_hours_string,
