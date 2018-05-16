@@ -32,7 +32,8 @@ module Chronopost
     def adjusted_params
       params_with_credentials = service.inject_credentials(params)
       params_with_defaults = add_defaults_to_params(params_with_credentials)
-      translate_params(params_with_defaults)
+      formatted_params = format_params(params_with_defaults)
+      translate_params(formatted_params)
     end
 
     def adjusted_response

@@ -34,11 +34,13 @@ require 'chronopost/operation'
 require 'chronopost/drop_off_points/search'
 require 'chronopost/drop_off_points/search/defaults'
 require 'chronopost/drop_off_points/search/translations'
+require 'chronopost/drop_off_points/search/format_params'
 require 'chronopost/drop_off_points/search/format_response'
 
 require 'chronopost/labels/create'
 require 'chronopost/labels/create/defaults'
 require 'chronopost/labels/create/translations'
+require 'chronopost/labels/create/format_params'
 
 require 'chronopost/labels/track'
 require 'chronopost/labels/track/defaults'

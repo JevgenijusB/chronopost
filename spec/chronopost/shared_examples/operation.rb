@@ -13,6 +13,12 @@ RSpec.shared_examples :operation do
         .and_return(response)
     end
 
+    if defined?(described_class::FormatParams)
+      expect(described_class::FormatParams)
+        .to receive(:for)
+        .and_return(params)
+    end
+
     expect(Chronopost::Query)
       .to(receive(:run))
       .with(service, described_class.operation, Hash)

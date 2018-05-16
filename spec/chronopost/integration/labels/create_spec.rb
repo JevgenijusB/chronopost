@@ -39,7 +39,7 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
 
   let(:parcel) do
     {
-      shipping_date: '2018-04-03T12:29:36+02:00',
+      shipping_date: '2018-05-23 12:29:36',
       shipping_hour: '12',
       weight: '2.0',
       height: '0',
