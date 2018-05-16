@@ -1,13 +1,5 @@
 # frozen_string_literal: true
 
-require 'coveralls'
-
-Coveralls.wear!
-SimpleCov.start do
-  add_filter 'spec/chronopost/integration'
-  add_filter 'spec/chronopost/shared_examples'
-end
-
 require 'chronopost/version'
 require 'chronopost/configuration'
 require 'chronopost/errors'
