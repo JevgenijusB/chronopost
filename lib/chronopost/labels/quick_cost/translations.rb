@@ -6,12 +6,12 @@ module Chronopost
       module Translations
         PARAMS = {
           account_number: :accountNumber,
-          departure_code: :DepCode,
-          arrival_code: :ArrCode,
-          weight: :Weight,
-          product_code: :ProductCode,
           password: :password,
-          type: :Type,
+          departure_code: :depCode,
+          arrival_code: :arrCode,
+          weight: :weight,
+          product_code: :productCode,
+          type: :type,
         }.freeze
 
         RESPONSE = {}.freeze
