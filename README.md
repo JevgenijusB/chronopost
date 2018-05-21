@@ -69,6 +69,13 @@ Chronopost::Labels::QuickCost.for(
 )
 ```
 
+Cancel a label:
+```ruby
+Chronopost::Labels::Cancel.for(
+  skybill_number: 'EE000927143CD',
+)
+```
+
 ### Documentation
 Documentation is generated using [Yard](https://yardoc.org/).
 
