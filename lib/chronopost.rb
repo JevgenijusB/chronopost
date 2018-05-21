@@ -47,6 +47,10 @@ require 'chronopost/labels/quick_cost'
 require 'chronopost/labels/quick_cost/defaults'
 require 'chronopost/labels/quick_cost/translations'
 
+require 'chronopost/labels/cancel'
+require 'chronopost/labels/cancel/defaults'
+require 'chronopost/labels/cancel/translations'
+
 module Chronopost
   module_function
 
