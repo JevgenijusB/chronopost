@@ -29,6 +29,11 @@ require 'chronopost/drop_off_points/search/translations'
 require 'chronopost/drop_off_points/search/format_params'
 require 'chronopost/drop_off_points/search/format_response'
 
+require 'chronopost/drop_off_points/details'
+require 'chronopost/drop_off_points/details/defaults'
+require 'chronopost/drop_off_points/details/translations'
+require 'chronopost/drop_off_points/details/format_response'
+
 require 'chronopost/labels/create'
 require 'chronopost/labels/create/defaults'
 require 'chronopost/labels/create/translations'
