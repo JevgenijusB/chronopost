@@ -6,7 +6,6 @@ module Chronopost
       module Translations
         PARAMS = {
           account_number: :accountNumber,
-          password: :password,
           latitude: :coordGeoLatitude,
           longitude: :coordGeoLongitude,
           point_type: :type,

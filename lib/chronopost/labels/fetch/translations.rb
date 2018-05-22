@@ -7,7 +7,6 @@ module Chronopost
         PARAMS = {
           header_value: :headerValue,
           account_number: :accountNumber,
-          password: :password,
           reservation_number: :reservationNumber,
         }.freeze
 
