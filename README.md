@@ -25,6 +25,13 @@ Chronopost::DropOffPoints::Search.for(
 )
 ```
 
+Get details of a drop-off point:
+```ruby
+Chronopost::DropOffPoints::Details.for(
+  id: '3449S',
+)
+```
+
 #### Labels
 Create a label and get its information:
 ```ruby
