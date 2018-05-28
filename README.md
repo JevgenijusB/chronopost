@@ -1,6 +1,7 @@
 # Chronopost API client
 
 [![Build Status](https://travis-ci.org/vinted/chronopost.svg?branch=master)](https://travis-ci.org/vinted/mondial_relay)
+[![Gem Version](https://badge.fury.io/rb/chronopost.svg)](https://badge.fury.io/rb/chronopost)
 
 The gem works as an interface to the [Chronopost](https://www.chronopost.fr/fr) Web service.
 
