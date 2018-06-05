@@ -4,47 +4,50 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
   let(:shipper) do
     {
       shipper_name: 'Test Shipper',
-      shipper_civility: 'E',
-      shipper_address: 'Folie-Méricourt, 15B',
-      shipper_postal_code: '75011',
-      shipper_city: 'PARIS',
+      shipper_civility: 'L',
+      shipper_address: '211 Rue Pasteur',
+      shipper_address_additional: '44',
+      shipper_postal_code: '33200',
+      shipper_city: 'Bordeaux',
       shipper_country_code: 'FR',
-      shipper_phone: '0607080910',
+      shipper_email: 'shipper@test.com',
     }
   end
 
   let(:customer) do
     {
-      customer_name: 'Vinted UAB',
+      customer_name: 'Vinted',
       customer_civility: 'E',
-      customer_address: 'Žirmūnų 70',
+      customer_address: '70-701 Rue Zirmunu',
       customer_postal_code: '09124',
-      customer_city: 'VILNIUS',
+      customer_city: 'Vilnius',
       customer_country_code: 'LT',
+      customer_country_name: 'Lituanie',
     }
   end
 
   let(:recipient) do
     {
-      recipient_name: 'Test Recipient',
-      recipient_civility: 'E',
-      recipient_address: 'Rue Pasteur, 211',
-      recipient_postal_code: '33200',
-      recipient_city: 'BORDEAUX',
+      recipient_name: 'CARTRIDGE WORLD',
+      recipient_name_additional: 'Test Recipient',
+      recipient_civility: 'L',
+      recipient_contact_name: 'Test Recipient',
+      recipient_address: '27 RUE GAMBETTA',
+      recipient_postal_code: '08200',
+      recipient_city: 'SEDAN',
       recipient_country_code: 'FR',
-      recipient_phone: '0607080911',
-      recipient_email: 'test@tets.com',
+      recipient_email: 'recipient@test.com',
     }
   end
 
   let(:parcel) do
     {
-      shipping_date: '2018-05-23 12:29:36',
+      shipping_date: '2018-06-05 10:29:36',
       shipping_hour: '12',
-      weight: '2.0',
-      height: '0',
-      length: '0',
-      width: '0',
+      weight: '0.5',
+      height: '30',
+      length: '30',
+      width: '60',
     }
   end
 
@@ -54,7 +57,10 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
         shipper: shipper,
         customer: customer,
         recipient: recipient,
-        reference: { recipient_reference: '0554S' },
+        reference: {
+          shipper_reference: '13454',
+          recipient_reference: '4442R',
+        },
         skybill: parcel,
       }
     end
