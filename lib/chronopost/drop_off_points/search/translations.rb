@@ -9,6 +9,7 @@ module Chronopost
           latitude: :coordGeoLatitude,
           longitude: :coordGeoLongitude,
           point_type: :type,
+          product_code: :productCode,
           shipping_date: :shippingDate,
           number_of_results: :maxPointChronopost,
           search_radius: :maxDistanceSearch,

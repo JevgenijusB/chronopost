@@ -6,8 +6,8 @@ RSpec.xdescribe Chronopost::DropOffPoints::Search, '.for' do
       {
         latitude: '49.698421',
         longitude: '4.972183',
-        shipping_date: '2017-05-20',
-        number_of_results: 1,
+        shipping_date: '2017-06-05',
+        number_of_results: 25,
       }
     end
 
