@@ -102,7 +102,7 @@ module Chronopost
           },
           skybill_params: {
             duplicate: 'N',
-            mode: 'SPD',
+            mode: 'PPR',
             with_reservation: 1,
           },
           password: nil,
