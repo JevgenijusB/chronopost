@@ -13,6 +13,8 @@ module Chronopost
       :api_timeout, :api_max_retries,
       :debug, :monitor, :enabled_services
 
+    attr_reader :http_adapter
+
     def initialize
       @account_number = nil
       @account_password = nil
@@ -24,6 +26,8 @@ module Chronopost
 
       @debug = false
       @monitor = nil
+
+      @http_adapter = :net_http
     end
 
     def credentials

@@ -24,6 +24,7 @@ module Chronopost
         read_timeout: Chronopost.config.api_timeout,
         log: Chronopost.config.debug,
         pretty_print_xml: true,
+        adapter: Chronopost.config.http_adapter,
       }
     end
 
@@ -43,10 +44,10 @@ module Chronopost
       max_retries.times do |i|
         begin
           return yield
+        rescue Savon::Error => e
+          raise ClientError, e.message if i + 1 == max_retries
         rescue Net::OpenTimeout, Net::ReadTimeout => e
           raise TimeoutError, e.message if i + 1 == max_retries
-        rescue StandardError => e
-          raise ClientError, e.message if i + 1 == max_retries
         end
       end
     end
