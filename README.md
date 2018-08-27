@@ -6,7 +6,7 @@
 The gem works as an interface to the [Chronopost](https://www.chronopost.fr/fr) Web service.
 
 ### Getting started
-A minimal gem's configuration is obtained by providing your credentials to the [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx):
+A minimal gem's configuration is obtained by providing your credentials to the Chronopost web service:
 ```ruby
 
 Chronopost.configure do |config|
