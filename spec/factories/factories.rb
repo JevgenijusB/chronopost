@@ -2,13 +2,13 @@
 
 FactoryBot.define do
   factory :client, class: Chronopost::Client do
-    wsdl_url 'https://www.chronopost.fr'
+    wsdl_url { 'https://www.chronopost.fr' }
 
     initialize_with { new(wsdl_url) }
   end
 
   factory :request, class: Chronopost::Request do
-    operation :test
+    operation { :test }
     params { { v1: 'v1', k2: 'v2' } }
 
     initialize_with { new(operation, params) }
@@ -17,21 +17,21 @@ FactoryBot.define do
   factory :configuration, class: Chronopost::Configuration
 
   factory :query, class: Chronopost::Query do
-    operation :test
+    operation { :test }
     params { { v1: 'v1', k2: 'v2' } }
 
     initialize_with { new(operation, params) }
   end
 
   factory :status, class: Chronopost::Status do
-    code 0
-    message 'OK'
+    code { 0 }
+    message { 'OK' }
 
     initialize_with { new(code, message) }
   end
 
   factory :base_service, class: Chronopost::Services::BaseService do
-    name :shipping
+    name { :shipping }
 
     initialize_with { new(name) }
   end
