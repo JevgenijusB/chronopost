@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :client, class: Chronopost::Client do
-    wsdl_url { 'https://www.chronopost.fr' }
+    wsdl_url { 'https://ws.chronopost.fr' }
 
     initialize_with { new(wsdl_url) }
   end

@@ -3,7 +3,7 @@
 module Chronopost
   module Services
     class DropOffPointsService < BaseService
-      WSDL_URL = 'https://www.chronopost.fr/recherchebt-ws-cxf/PointRelaisServiceWS?wsdl'
+      WSDL_URL = 'https://ws.chronopost.fr/recherchebt-ws-cxf/PointRelaisServiceWS?wsdl'
 
       def initialize
         super(:drop_off_points)

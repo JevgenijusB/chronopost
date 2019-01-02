@@ -3,7 +3,7 @@
 module Chronopost
   module Services
     class QuickCostService < BaseService
-      WSDL_URL = 'https://www.chronopost.fr/quickcost-cxf/QuickcostServiceWS?wsdl'
+      WSDL_URL = 'https://ws.chronopost.fr/quickcost-cxf/QuickcostServiceWS?wsdl'
 
       def initialize
         super(:quick_cost)

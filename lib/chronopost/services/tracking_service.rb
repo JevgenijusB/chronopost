@@ -3,7 +3,7 @@
 module Chronopost
   module Services
     class TrackingService < BaseService
-      WSDL_URL = 'https://www.chronopost.fr/tracking-cxf/TrackingServiceWS?wsdl'
+      WSDL_URL = 'https://ws.chronopost.fr/tracking-cxf/TrackingServiceWS?wsdl'
 
       def initialize
         super(:tracking)

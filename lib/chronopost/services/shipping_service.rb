@@ -3,7 +3,7 @@
 module Chronopost
   module Services
     class ShippingService < BaseService
-      WSDL_URL = 'https://www.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl'
+      WSDL_URL = 'https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl'
 
       def initialize
         super(:shipping)
