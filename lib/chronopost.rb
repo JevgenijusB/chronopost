@@ -29,6 +29,12 @@ require 'chronopost/drop_off_points/search/translations'
 require 'chronopost/drop_off_points/search/format_params'
 require 'chronopost/drop_off_points/search/format_response'
 
+require 'chronopost/drop_off_points/search_by_address'
+require 'chronopost/drop_off_points/search_by_address/defaults'
+require 'chronopost/drop_off_points/search_by_address/translations'
+require 'chronopost/drop_off_points/search_by_address/format_params'
+require 'chronopost/drop_off_points/search_by_address/format_response'
+
 require 'chronopost/drop_off_points/details'
 require 'chronopost/drop_off_points/details/defaults'
 require 'chronopost/drop_off_points/details/translations'
@@ -86,6 +92,7 @@ module Chronopost
 
   def monitor(monitorable)
     return unless config.monitor.respond_to?(:call)
+
     config.monitor.call(monitorable)
   end
 end
