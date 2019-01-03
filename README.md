@@ -15,10 +15,10 @@ Chronopost.configure do |config|
 end
 ```
 
-#### Drop-Off Points
-Do the drop-off point search by GPS coordinates:
+#### Parcel Shops
+Do the parcel shop search by GPS coordinates:
 ```ruby
-Chronopost::DropOffPoints::Search.for(
+Chronopost::ParcelShops::Search.for(
   latitude: '49.698421',
   longitude: '4.972183',
   shipping_date: '2017-05-20',
@@ -26,9 +26,22 @@ Chronopost::DropOffPoints::Search.for(
 )
 ```
 
-Get details of a drop-off point:
+Do the parcel shop search by address information:
 ```ruby
-Chronopost::DropOffPoints::Details.for(
+Chronopost::ParcelShops::SearchByAddress.for(
+  address: 'An der Spandauer Brücke 4',
+  postal_code: '10178',
+  city: 'Berlin',
+  country_code: 'DE',
+  shipping_date: '2019-01-03',
+  number_of_results: 1,
+  language: 'DE',
+)
+```
+
+Get details of a specific parcel shop:
+```ruby
+Chronopost::ParcelShops::Details.for(
   id: '3449S',
 )
 ```
