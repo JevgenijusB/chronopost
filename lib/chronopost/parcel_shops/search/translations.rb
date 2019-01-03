@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Chronopost
-  module DropOffPoints
+  module ParcelShops
     class Search
       module Translations
         PARAMS = {
@@ -17,7 +17,7 @@ module Chronopost
         }.freeze
 
         RESPONSE = {
-          liste_point_relais: :drop_off_point_list,
+          liste_point_relais: :parcel_shop_list,
           identifiant: :id,
           nom: :name,
           actif: :active,

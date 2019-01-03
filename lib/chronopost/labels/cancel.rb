@@ -3,7 +3,10 @@
 module Chronopost
   module Labels
     class Cancel < Operation
-      configure operation: :cancel_skybill, service: :tracking
+      configure(
+        operation: :cancel_skybill,
+        service: :tracking,
+      )
     end
   end
 end

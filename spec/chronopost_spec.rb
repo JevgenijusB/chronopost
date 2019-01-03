@@ -34,7 +34,7 @@ RSpec.describe Chronopost do
     before do
       described_class.configure do |config|
         config.account_number = account_number
-        config.enabled_services = %i(drop_off_points)
+        config.enabled_services = %i(parcel_shops)
       end
     end
 
@@ -43,7 +43,7 @@ RSpec.describe Chronopost do
     end
 
     it 'registers services' do
-      expect(described_class.services.resolve(:drop_off_points)).not_to be_nil
+      expect(described_class.services.resolve(:parcel_shops)).not_to be_nil
     end
   end
 

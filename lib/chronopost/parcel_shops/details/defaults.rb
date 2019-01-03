@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Chronopost
-  module DropOffPoints
+  module ParcelShops
     class Details
       module Defaults
         PARAMS = {

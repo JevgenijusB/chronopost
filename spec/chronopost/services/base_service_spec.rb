@@ -6,7 +6,7 @@ RSpec.describe Chronopost::Services::BaseService do
   describe '.new' do
     subject { described_class.new(service_name) }
 
-    let(:service_name) { :drop_off_points }
+    let(:service_name) { :parcel_shops }
 
     it { is_expected.to be_an_instance_of(described_class) }
   end

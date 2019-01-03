@@ -3,8 +3,10 @@
 module Chronopost
   module Labels
     class Track < Operation
-      configure operation: :track_skybill_v2,
-                service: :tracking
+      configure(
+        operation: :track_skybill_v2,
+        service: :tracking,
+      )
     end
   end
 end

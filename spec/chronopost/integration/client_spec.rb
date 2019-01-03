@@ -3,7 +3,7 @@
 RSpec.xdescribe Chronopost::Client do
   WebMock.allow_net_connect!(net_http_connect_on_start: true)
 
-  let(:service) { build(:drop_off_points_service) }
+  let(:service) { build(:parcel_shops_service) }
   let(:client) { service.client }
 
   describe '#operations' do

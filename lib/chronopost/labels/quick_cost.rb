@@ -3,7 +3,10 @@
 module Chronopost
   module Labels
     class QuickCost < Operation
-      configure operation: :quick_cost, service: :quick_cost
+      configure(
+        operation: :quick_cost,
+        service: :quick_cost,
+      )
     end
   end
 end

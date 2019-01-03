@@ -3,8 +3,10 @@
 module Chronopost
   module Labels
     class Create < Operation
-      configure operation: :shipping_multi_parcel,
-                service: :shipping
+      configure(
+        operation: :shipping_multi_parcel,
+        service: :shipping,
+      )
     end
   end
 end

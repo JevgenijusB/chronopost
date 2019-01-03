@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Chronopost::DropOffPoints::Search::FormatParams, '.for' do
+RSpec.describe Chronopost::ParcelShops::Search::FormatParams, '.for' do
   subject { described_class.for(params) }
 
   let(:params) do

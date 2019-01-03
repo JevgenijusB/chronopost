@@ -3,7 +3,7 @@
 module Chronopost
   class Configuration
     DEFAULT_SERVICES = %i(
-      drop_off_points
+      parcel_shops
       shipping
       tracking
       quick_cost

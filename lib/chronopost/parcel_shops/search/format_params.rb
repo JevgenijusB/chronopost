@@ -3,8 +3,8 @@
 require 'interactor/initializer'
 
 module Chronopost
-  module DropOffPoints
-    class SearchByAddress
+  module ParcelShops
+    class Search
       class FormatParams
         include Interactor::Initializer
 

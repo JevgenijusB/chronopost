@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.xdescribe Chronopost::DropOffPoints::Search, '.for' do
+RSpec.xdescribe Chronopost::ParcelShops::Search, '.for' do
   it_behaves_like :query do
     let(:params) do
       {

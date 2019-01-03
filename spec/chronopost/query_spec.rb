@@ -3,7 +3,7 @@
 RSpec.describe Chronopost::Query, '.run' do
   subject { described_class.run(service, operation, params) }
 
-  let(:service) { build(:drop_off_points_service) }
+  let(:service) { build(:parcel_shops_service) }
   let(:client) { service.client }
 
   let(:operation) { :test }

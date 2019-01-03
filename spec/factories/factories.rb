@@ -36,7 +36,7 @@ FactoryBot.define do
     initialize_with { new(name) }
   end
 
-  factory :drop_off_points_service, class: Chronopost::Services::DropOffPointsService
+  factory :parcel_shops_service, class: Chronopost::Services::ParcelShopsService
   factory :shipping_service, class: Chronopost::Services::ShippingService
   factory :tracking_service, class: Chronopost::Services::TrackingService
   factory :quick_cost_service, class: Chronopost::Services::QuickCostService

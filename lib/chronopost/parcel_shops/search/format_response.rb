@@ -3,7 +3,7 @@
 require 'interactor/initializer'
 
 module Chronopost
-  module DropOffPoints
+  module ParcelShops
     class Search
       class FormatResponse
         include Interactor::Initializer
@@ -11,7 +11,7 @@ module Chronopost
         initialize_with :response
 
         def run
-          response[:drop_off_point_list]
+          response[:parcel_shop_list]
         end
       end
     end
