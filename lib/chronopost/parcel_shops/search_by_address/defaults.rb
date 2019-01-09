@@ -14,6 +14,7 @@ module Chronopost
           point_type: 'P',
           product_code: 49,
           service: 'L',
+          weight: nil,
           shipping_date: nil,
           number_of_results: 25,
           search_radius: 40,

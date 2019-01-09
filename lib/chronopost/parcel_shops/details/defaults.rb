@@ -10,6 +10,7 @@ module Chronopost
           id: nil,
           country_code: 'FR',
           language: 'FR',
+          version: 2.0,
         }.freeze
       end
     end
