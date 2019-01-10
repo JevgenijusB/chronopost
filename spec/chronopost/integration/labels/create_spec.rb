@@ -27,6 +27,7 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
   end
 
   let(:recipient) do
+    # FR
     {
       recipient_name: 'CARTRIDGE WORLD',
       recipient_name_additional: 'Test Recipient',
@@ -38,11 +39,48 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
       recipient_country_code: 'FR',
       recipient_email: 'recipient@test.com',
     }
+    # NL
+    # {
+    #   recipient_name: 'HOMERR B.V. / A-MARKT',
+    #   recipient_name_additional: 'Test Recipient',
+    #   recipient_civility: 'L',
+    #   recipient_contact_name: 'Test Recipient',
+    #   recipient_address: '32 BRINK',
+    #   recipient_postal_code: '1097 TW',
+    #   recipient_city: 'AMSTERDAM',
+    #   recipient_country_code: 'NL',
+    #   recipient_email: 'recipient@test.com',
+    # }
+    # BE
+    # {
+    #   recipient_name: 'INTERSTUDIO',
+    #   recipient_name_additional: 'Test Recipient',
+    #   recipient_civility: 'L',
+    #   recipient_contact_name: 'Test Recipient',
+    #   recipient_address: '11 KAPELSTRAAT',
+    #   recipient_postal_code: '2660',
+    #   recipient_city: 'HOBOKEN',
+    #   recipient_country_code: 'BE',
+    #   recipient_email: 'recipient@test.com',
+    # }
+    # LU
+    # {
+    #   recipient_name: 'ALIMA BELAIR',
+    #   recipient_name_additional: 'Test Recipient',
+    #   recipient_civility: 'L',
+    #   recipient_contact_name: 'Test Recipient',
+    #   recipient_address: '20 AVENUE X SEPTEMBRE',
+    #   recipient_postal_code: '2550',
+    #   recipient_city: 'LUXEMBOURG',
+    #   recipient_country_code: 'LU',
+    #   recipient_email: 'recipient@test.com',
+    # }
   end
 
   let(:parcel) do
     {
-      shipping_date: '2018-06-05 10:29:36',
+      shipping_date: '2019-01-10 10:29:36',
+      # product_code: 49, # International
       shipping_hour: '12',
       weight: '0.5',
       height: '30',
@@ -59,7 +97,10 @@ RSpec.xdescribe Chronopost::Labels::Create, '.for' do
         recipient: recipient,
         reference: {
           shipper_reference: '13454',
-          recipient_reference: '4442R',
+          recipient_reference: '4442R', # FR
+          # recipient_reference: '9989H', # NL
+          # recipient_reference: '3047A', # BE
+          # recipient_reference: '8176A', # LU
         },
         skybill: parcel,
       }
