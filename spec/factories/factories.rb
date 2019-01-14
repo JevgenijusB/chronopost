@@ -42,4 +42,16 @@ FactoryBot.define do
   factory :quick_cost_service, class: Chronopost::Services::QuickCostService
 
   factory :service_registry, class: Chronopost::ServiceRegistry
+
+  factory :account, class: Chronopost::Account do
+    number { 'TEST' }
+    password { 'SECRET' }
+
+    trait :development do
+      number { '19869502' }
+      password { '255562' }
+    end
+
+    initialize_with { new(number, password) }
+  end
 end

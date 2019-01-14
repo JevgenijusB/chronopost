@@ -25,23 +25,30 @@ RSpec.describe Chronopost::Services::BaseService do
   describe '#wsdl_url' do
     subject { service.wsdl_url }
 
-    it 'raises a NotImplementedError error' do
-      expect { subject }.to raise_error NotImplementedError
+    it 'raises an error' do
+      expect { subject }.to raise_error 'must be implemented'
     end
   end
 
   describe '#inject_credentials' do
-    subject { service.inject_credentials(params) }
+    subject { service.inject_credentials(account, params) }
 
-    let(:credentials) { { inner: { accountNumber: 'n' }, accountPassword: 'p' } }
-    let(:params) { { inner: { accountNumber: 'test' }, accountPassword: '' } }
+    let(:account) { build(:account) }
 
-    before do
-      expect(Chronopost.config).to receive(:credentials).and_return(credentials)
+    let(:params) do
+      {
+        account_number: nil,
+        password: nil,
+      }
     end
 
     it 'injects credentials to params' do
-      expect(subject).to eq(params.deep_merge(credentials))
+      expect(subject).to eq(
+        params.merge(
+          account_number: account.number,
+          password: account.password,
+        ),
+      )
     end
   end
 end

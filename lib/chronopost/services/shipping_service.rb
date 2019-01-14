@@ -13,15 +13,13 @@ module Chronopost
         WSDL_URL
       end
 
-      private
-
-      def credentials
-        {
+      def inject_credentials(account, params)
+        params.deep_merge(
           header_value: {
-            account_number: Chronopost.config.account_number,
+            account_number: account.number,
           },
-          password: Chronopost.config.account_password,
-        }
+          password: account.password,
+        )
       end
     end
   end

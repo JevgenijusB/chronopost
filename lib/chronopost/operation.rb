@@ -21,7 +21,7 @@ module Chronopost
       end
     end
 
-    initialize_with :params
+    initialize_with :account, :params
 
     def run
       adjusted_response
@@ -30,7 +30,7 @@ module Chronopost
     private
 
     def adjusted_params
-      params_with_credentials = service.inject_credentials(params)
+      params_with_credentials = service.inject_credentials(account, params)
       params_with_defaults = add_defaults_to_params(params_with_credentials)
       formatted_params = format_params(params_with_defaults)
       translate_params(formatted_params)

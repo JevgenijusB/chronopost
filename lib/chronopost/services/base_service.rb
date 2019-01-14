@@ -14,17 +14,14 @@ module Chronopost
       end
 
       def wsdl_url
-        raise NotImplementedError
+        raise 'must be implemented'
       end
 
-      def inject_credentials(params)
-        params.deep_merge(credentials)
-      end
-
-      private
-
-      def credentials
-        Chronopost.config.credentials
+      def inject_credentials(account, params)
+        params.deep_merge(
+          account_number: account.number,
+          password: account.password,
+        )
       end
     end
   end

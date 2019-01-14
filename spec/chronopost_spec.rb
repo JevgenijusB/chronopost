@@ -5,15 +5,16 @@ RSpec.describe Chronopost do
     expect(described_class::VERSION).not_to be nil
   end
 
-  let(:account_number) { 'test' }
-  before { Chronopost.config.account_number = account_number }
+  let(:enabled_services) { %i(parcel_shops) }
+
+  before { Chronopost.config.enabled_services = enabled_services }
 
   describe '.config' do
     subject { described_class.config }
 
     it 'returns a configuration' do
       expect(subject).to be_a(Chronopost::Configuration)
-      expect(subject.account_number).to eq(account_number)
+      expect(subject.enabled_services).to eq(enabled_services)
     end
   end
 
@@ -23,23 +24,20 @@ RSpec.describe Chronopost do
     let(:config) { build(:configuration) }
 
     it 'resets a configuration' do
-      expect(subject.account_number).to eq(config.account_number)
-      expect(subject.account_password).to eq(config.account_password)
+      expect(subject.enabled_services)
+        .to eq(Chronopost::Configuration::DEFAULT_SERVICES)
     end
   end
 
   describe '.configure' do
-    let(:account_number) { 'new' }
-
     before do
       described_class.configure do |config|
-        config.account_number = account_number
-        config.enabled_services = %i(parcel_shops)
+        config.enabled_services = enabled_services
       end
     end
 
     it 'allows setting configuration' do
-      expect(described_class.config.account_number).to eq(account_number)
+      expect(described_class.config.enabled_services).to eq(enabled_services)
     end
 
     it 'registers services' do

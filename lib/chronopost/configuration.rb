@@ -9,16 +9,16 @@ module Chronopost
       quick_cost
     ).freeze
 
-    attr_accessor :account_number, :account_password,
-      :api_timeout, :api_max_retries,
-      :debug, :monitor, :enabled_services
+    attr_accessor(
+      :api_timeout,
+      :api_max_retries,
+      :debug, :monitor,
+      :enabled_services
+    )
 
     attr_reader :http_adapter
 
     def initialize
-      @account_number = nil
-      @account_password = nil
-
       @enabled_services = DEFAULT_SERVICES
 
       @api_timeout = 10
@@ -28,13 +28,6 @@ module Chronopost
       @monitor = nil
 
       @http_adapter = :net_http
-    end
-
-    def credentials
-      {
-        account_number: account_number,
-        password: account_password,
-      }
     end
   end
 end

@@ -6,19 +6,27 @@
 The gem works as an interface to the [Chronopost](https://www.chronopost.fr/fr) Web service.
 
 ### Getting started
-A minimal gem's configuration is obtained by providing your credentials to the Chronopost web service:
+Several configurations such as `debug` mode or an `api_timeout` can be setup as the following:
 ```ruby
-
 Chronopost.configure do |config|
-  config.account_number = 'Your account number'
-  config.account_password = 'Your private key'
+  config.debug = true
+  # .. Other configurations
 end
+````
+
+A merchant account with Chronopost's Web service credentials must be created:
+```ruby
+merchant_account = Chronopost::Account.new(
+  'Your account number',
+  'Your private key',
+)
 ```
 
 #### Parcel Shops
 Do the parcel shop search by GPS coordinates:
 ```ruby
 Chronopost::ParcelShops::Search.for(
+  merchant_account,
   latitude: '49.698421',
   longitude: '4.972183',
   shipping_date: '2017-05-20',
@@ -29,6 +37,7 @@ Chronopost::ParcelShops::Search.for(
 Do the parcel shop search by address information:
 ```ruby
 Chronopost::ParcelShops::SearchByAddress.for(
+  merchant_account,
   address: 'An der Spandauer Brücke 4',
   postal_code: '10178',
   city: 'Berlin',
@@ -42,6 +51,7 @@ Chronopost::ParcelShops::SearchByAddress.for(
 Get details of a specific parcel shop:
 ```ruby
 Chronopost::ParcelShops::Details.for(
+  merchant_account,
   id: '3449S',
 )
 ```
@@ -50,6 +60,7 @@ Chronopost::ParcelShops::Details.for(
 Create a label and get its information:
 ```ruby
 Chronopost::Labels::Create.for(
+  merchant_account,
   shipper: {
     # ...,
   },
@@ -70,6 +81,7 @@ Chronopost::Labels::Create.for(
 Fetch a label's information including PDF:
 ```ruby
 Chronopost::Labels::Fetch.for(
+  merchant_account,
   reservation_number: '88895913588767082',
 )
 ```
@@ -77,6 +89,7 @@ Chronopost::Labels::Fetch.for(
 Get a label's shipping history:
 ```ruby
 Chronopost::Labels::Track.for(
+  merchant_account,
   skybill_number: 'EE000927143CD',
 )
 ```
@@ -84,6 +97,7 @@ Chronopost::Labels::Track.for(
 Estimate your shipping price:
 ```ruby
 Chronopost::Labels::QuickCost.for(
+  merchant_account,
   departure_code: '59800',
   arrival_code: '66380',
   weight: 1,
@@ -93,6 +107,7 @@ Chronopost::Labels::QuickCost.for(
 Cancel a label:
 ```ruby
 Chronopost::Labels::Cancel.for(
+  merchant_account,
   skybill_number: 'EE000927143CD',
 )
 ```

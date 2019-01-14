@@ -13,8 +13,6 @@ require 'chronopost/shared_examples/operation'
 RSpec.configure do |config|
   config.before do
     Chronopost.configure do |cp_config|
-      cp_config.account_number = '19869502'
-      cp_config.account_password = '255562'
       cp_config.api_max_retries = 1
       cp_config.debug = true
     end

@@ -22,6 +22,7 @@ require 'chronopost/service_registry'
 require 'chronopost/request'
 require 'chronopost/query'
 require 'chronopost/operation'
+require 'chronopost/account'
 
 require 'chronopost/parcel_shops/search'
 require 'chronopost/parcel_shops/search/defaults'

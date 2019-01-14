@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples :operation do
-  subject { described_class.for(params) }
+  subject { described_class.for(account, params) }
 
+  let(:account) { build(:account) }
   let(:params) { { param: :param } }
   let(:response) { { response: :response } }
 
